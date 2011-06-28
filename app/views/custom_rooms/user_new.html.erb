@@ -1,0 +1,32 @@
+<h1>New Webconference Room:</h1>
+
+<%= semantic_form_for [@server, @room], :url => bigbluebutton_server_rooms_path(@server) do |f| %>
+
+
+  <%= hidden_field_tag :redir_url, pages_home_url %>
+  <%= f.hidden_field :owner_id %>
+  <%= f.hidden_field :owner_type %>
+  <%= f.hidden_field :logout_url %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :private %><br />
+    <%= f.check_box :private %>
+  </div>
+  <div class="field">
+    <%= f.label :attendee_password %><br />
+    <%= f.password_field :attendee_password %>
+  </div>
+  <div class="field">
+    <%= f.label :moderator_password %><br />
+    <%= f.password_field :moderator_password %>
+  </div>
+  <div class="actions">
+    <%= f.buttons %>
+  </div>
+
+<% end %>
+

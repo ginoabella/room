@@ -1,0 +1,19 @@
+<h1><%= title %></h1>
+
+<div class="register">
+<table>
+  <tr>
+    <td>Code</td>
+    <td>Remark</td>
+    <td>User</td>
+    <td></td>
+  </tr>
+<%= render @registers %>
+
+</table>
+</div>
+<br>
+<div align="right">
+<p><%= link_to "Add Registry Code", new_register_path %></p>
+</div>
+

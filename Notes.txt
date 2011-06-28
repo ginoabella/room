@@ -1,0 +1,50 @@
+
+rb19 rails generate controller Pages
+update application.html.erb
+update application_helper.rb
+create layouts _stylesheets.html.erb
+copy blueprint to public/stylesheets
+create layouts _header.html.erb
+create layouts _footer.html.erb
+ # TODO: create custom.css templates
+create public stylesheets custom.css
+remove public/index.html
+create pages/home.html.erb
+add to routes.rb root :to => 'pages#home'
+add to pages_controller.rb
+  def home
+  	@title = 'home'
+  end
+
+encountered error on webrick
+lsof|grep 3000
+kill -9 second col value
+
+to check routes - rake routes
+
+rb19 rails generate migration add_column_external_to_bigbluebutton_rooms
+rb19 rake db:migrate
+
+Warning in rake, insert include Rake::DSL in Rakefile
+
+rails generate devise:install
+rails generate devise User
+
+rb19 rails generate migration add_column_name_to_users
+
+rails generate model Register user_id:integer code:string
+
+rails generate devise:views
+
+create views/shared/_error_messages.html.erb
+rb19 rails generate migration add_column_remarks_to_registers
+rails generate formtastic:install
+
+issue with delete/destroy: culprit is jquery
+rails generate jquery:install
+
+for test environment
+rake db:migrate RAILS_ENV="test"
+rails s -e test
+
+

@@ -1,0 +1,10 @@
+<%= semantic_form_for @register do |form| %>
+  <%= form.inputs do %>
+    <!-- # TODO: option to generate the code -->
+    <%= form.input :code, :label => 'Registry Code',
+                   :input_html => {  :cols => 10, :maxlength => 10 }%>
+    <%= form.input :remark,  :input_html => {  :cols => 1, :maxlength => 200 } %>
+  <% end %>
+  <%= form.buttons %>
+<% end %>
+

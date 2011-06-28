@@ -1,0 +1,23 @@
+<h1><%= title %></h1>
+
+<div id="home_menu">
+  <%= link_to 'Create Room', user_new_room_path(current_user), :class => 'webconference_user_new' %>
+</div>
+
+<% i = 1 %>
+<% @rooms.each do |room| %>
+  <div class="home_webconference_room <%= 'home_webconference_room_even' if i%2 == 0 %>">
+  <div class="buttons_left">
+    <%= link_to 'Join', join_bigbluebutton_server_room_path(room.server, room), :class => 'webconference_join_button button red_button small' %>
+  </div>
+
+    <div class="buttons_right">
+      <%= link_to 'Details', bigbluebutton_server_room_path(room.server, room), :class => 'webconference_details_button button gray_button small', :"data-room-id" => room.id %>
+      <%= link_to 'Remove', bigbluebutton_server_room_path(room.server, room), :confirm => 'Are you sure?', :method => :delete, :class => 'button gray_button small' %>
+    </div>  
+    <%= link_to room.name, bigbluebutton_server_room_path(room.server, room), :class => 'webconference_details_button home_webconference_name', :"data-room-id" => room.id %>
+    <%= render :partial => 'pages/webconference_details', :locals => { :room => room } %>
+  </div>
+  <% i += 1 %>
+<% end %>
+
